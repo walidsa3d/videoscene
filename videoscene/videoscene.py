@@ -1,6 +1,6 @@
 import re
 from operator import methodcaller
-
+from scenedata import definitions
 
 def parse(filename):
 	screensize=re.compile('(720p|1080p)')
@@ -45,4 +45,8 @@ def parse(filename):
 		del data['series']
 	return data
 
-print parse("The.Best.of.Everything.1959.720p.BluRay.x264-SADPANDA")
+def explain(tag):
+	"""explain scene release tags in plain english"""
+	return definitions[tag.lower()]
+
+print explain('ts')
