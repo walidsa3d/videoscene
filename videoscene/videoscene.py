@@ -38,7 +38,7 @@ def parse(filename):
 	temptitle=title.replace('.',' ').strip('-').strip()
 	data['title']=re.sub('\s{2,}',' ',temptitle)
 	if 'series' in data:
-		s,e=splitted=re.split('e|E',data['series'])
+		s,e=re.split('e|E',data['series'])
 		#use lstrip to remove leading zeros
 		data['season']=s[1:].lstrip('0')
 		data['episode']=e.lstrip('0')
