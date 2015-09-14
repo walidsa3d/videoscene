@@ -11,7 +11,7 @@ requires=[i.strip() for i in open("requirements.txt").readlines()]
 
 setup(
     name='videoscene',
-    version="0.1.0",
+    version="0.1.1",
     description='Parse scene release tags',
     long_description=read_md('README.md'),
     author='Walid Saad',
