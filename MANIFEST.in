@@ -1,3 +1,5 @@
 include README.md
+include AUTHORS
+include HISTORY
 include LICENSE
 recursive-include docs *

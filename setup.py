@@ -5,9 +5,9 @@ try:
     from pypandoc import convert
     read_md = lambda f: convert(f, 'rst')
 except ImportError:
-    print("warning: pypandoc module not found, could not convert Markdown to RST")
+    print(
+        "warning: pypandoc module not found, could not convert Markdown to RST")
     read_md = lambda f: open(f, 'r').read()
-requires=[i.strip() for i in open("requirements.txt").readlines()]
 
 setup(
     name='videoscene',
@@ -20,9 +20,16 @@ setup(
     packages=find_packages(),
     package_data={'': ['LICENSE']},
     include_package_data=True,
-    install_requires=requires,
     test_suite="tests",
     license="MIT",
     zip_safe=False,
-
+    classifiers=[
+        'Development Status :: 4 - Beta',
+        'Environment :: Console',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: MIT License',
+        'Operating System :: Unix',
+        'Programming Language :: Python :: 2.7',
+        'Topic :: Utilities'
+    ]
 )
