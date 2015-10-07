@@ -1,16 +1,17 @@
 #Videoscene
-A parse for scene release tags
+A parser for scene release tags
 
+#Install (automatic)
+```
+$ pip install videoscene
+```
 #Install (manual)
 ```
 $ git clone git@github.com:walidsa3d/videoscene.git
 $ cd videoscene
 $ python setup.py install
 ```
-##Usage
-```
 
-```
 #License
 ```
 The MIT License (MIT)

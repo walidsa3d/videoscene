@@ -1,0 +1,28 @@
+Changelog
+=========
+
+%%version%% (unreleased)
+------------------------
+
+- Update setup.py, MANIFEST. [walid]
+
+- Fix setup.cfg, formatting. [walid]
+
+- Some fixes. [walid]
+
+- Bump version: 0.1.0 → 0.1.1. [walid]
+
+- Fixed setup.py. [walid]
+
+- Added setup.cfg. [walid]
+
+- Update setup.py         new file:   HISTORY     new file:
+  MANIFEST.in         new file:   requirements.txt    new file:
+  setup.cfg   modified:   setup.py. [walid]
+
+- Add some project files  new file:   .gitignore  new file:   AUTHORS
+  new file:   LICENSE     new file:   tests/___init__.py. [walid]
+
+- Explain release tags. [walid]
+
+

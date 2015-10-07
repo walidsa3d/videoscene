@@ -11,16 +11,17 @@ except ImportError:
 
 setup(
     name='videoscene',
-    version="0.1.1",
+    version="0.2.0",
     description='Parse scene release tags',
     long_description=read_md('README.md'),
+    keywords='scene release tags',
     author='Walid Saad',
     author_email='walid.sa3d@gmail.com',
     url='http://github.com/walidsa3d/videoscene',
     packages=find_packages(),
     package_data={'': ['LICENSE']},
     include_package_data=True,
-    test_suite="tests",
+    test_suite="nose.collector",
     license="MIT",
     zip_safe=False,
     classifiers=[

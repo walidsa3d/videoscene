@@ -5,8 +5,9 @@ from scenedata import definitions
 
 
 def parse(filename):
+    """ parse a scene release string and return a dictionary of parsed values."""
     screensize = re.compile('(720p|1080p)')
-    formate = re.compile(
+    format_ = re.compile(
         'CAM|TS|TELESYNC|(DVD|BD)?SCR|DDC|R5[\.\s]LINE|R5|(DVD|HD|BR|BD|WEB)Rip|DVDR|(HD|PD)TV|WEB-?DL|BluRay')
     year = re.compile('(1|2)\d{3}')
     series = re.compile('s\d{1,3}e\d{1,3}', re.I)
@@ -25,7 +26,7 @@ def parse(filename):
 
     title = filename
     attrs = {'screenSize': screensize,
-             'format': formate,
+             'format': format_,
              'year': year,
              'series': series,
              'release_group': group,
@@ -57,4 +58,3 @@ def parse(filename):
 def explain(tag):
     """explain scene release tags in plain english"""
     return definitions[tag.lower()]
-
