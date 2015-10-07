@@ -1,8 +1,10 @@
 Changelog
 =========
 
-%%version%% (unreleased)
-------------------------
+0.2.0 (2015-10-07)
+------------------
+
+- Fix formatting. [walid]
 
 - Update setup.py, MANIFEST. [walid]
 
