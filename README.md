@@ -1,18 +1,21 @@
-#Videoscene
+# Videoscene
+![downloads](https://img.shields.io/pypi/dm/videoscene.svg)
+![version](https://img.shields.io/pypi/l/videoscene.svg)
+
 A parser for scene release tags
 
-#Install (automatic)
+## Install (automatic)
 ```
 $ pip install videoscene
 ```
-#Install (manual)
+## Install (manual)
 ```
 $ git clone git@github.com:walidsa3d/videoscene.git
 $ cd videoscene
 $ python setup.py install
 ```
 
-#License
+## License
 ```
 The MIT License (MIT)
 Copyright (c) 2015 Walid Saad
