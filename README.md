@@ -1,6 +1,7 @@
 # Videoscene
 ![downloads](https://img.shields.io/pypi/dm/videoscene.svg)
-![version](https://img.shields.io/pypi/l/videoscene.svg)
+![license](https://img.shields.io/pypi/l/videoscene.svg)
+![version](https://img.shields.io/pypi/v/videoscene.svg)
 
 A parser for scene release tags
 

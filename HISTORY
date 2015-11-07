@@ -1,6 +1,16 @@
 Changelog
 =========
 
+%%version%% (unreleased)
+------------------------
+
+- Add badges. [walid]
+
+0.3.0 (2015-10-07)
+------------------
+
+- Better detection of video tags (case insensitive) [walid]
+
 0.2.0 (2015-10-07)
 ------------------
 

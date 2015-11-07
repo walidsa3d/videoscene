@@ -7,8 +7,8 @@ from scenedata import definitions
 def parse(filename):
     """ parse a scene release string and return a dictionary of parsed values."""
     screensize = re.compile('(720p|1080p)')
-    format_ = re.compile(
-        'CAM|TS|TELESYNC|(DVD|BD)?SCR|DDC|R5[\.\s]LINE|R5|(DVD|HD|BR|BD|WEB)Rip|DVDR|(HD|PD)TV|WEB-?DL|BluRay', re.I)
+    rip = re.compile(
+        'CAM|TS|TELESYNC|DVDSCR|BDSCR|DDC|R5LINE|R5|DVDRip|HDRip|BRRip|BDRip|WEBRip|DVDR|HDtv|PDTV|WEBDL|BluRay', re.I)
     year = re.compile('(1|2)\d{3}')
     series = re.compile('s\d{1,3}e\d{1,3}', re.I)
     group = re.compile('[A-Za-z0-9]+$', re.I)
@@ -22,11 +22,11 @@ def parse(filename):
     release = re.compile(
         'REAL[\.\s]PROPER|REMASTERED|PROPER|REPACK|READNFO|READ[\.\s]NFO|DiRFiX|NFOFiX', re.I)
     subtitles = re.compile(
-        'MULTi(SUBS)?|NORDiC|DANiSH|SWEDiSH|RUSSIAN|NORWEGiAN|GERMAN|iTALiAN|FRENCH|SPANiSH|SWESUB', re.I)
+        'MULTi(SUBS)?|NORDiC|DANiSH|SWEDiSH|CHINESE|RUSSIAN|NORWEGiAN|GERMAN|iTALiAN|FRENCH|SPANiSH|SWESUB', re.I)
 
     title = filename
     attrs = {'screenSize': screensize,
-             'format': format_,
+             'rip': rip,
              'year': year,
              'series': series,
              'release_group': group,
@@ -44,14 +44,14 @@ def parse(filename):
             matched = methodcaller('group')(match)
             data[attr] = matched
             title = re.sub(matched, '', title)
-    temptitle = title.replace('.', ' ').strip('-').strip()
-    data['title'] = re.sub('\s{2,}', ' ', temptitle)
     if 'series' in data:
         s, e = re.split('e|E', data['series'])
         # use lstrip to remove leading zeros
         data['season'] = s[1:].lstrip('0')
         data['episode'] = e.lstrip('0')
         del data['series']
+    temptitle = title.replace('.', ' ').strip('-').strip()
+    data['title'] = re.sub('\s{2,}', ' ', temptitle)
     return data
 
 
