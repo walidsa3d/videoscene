@@ -11,7 +11,7 @@ except ImportError:
 
 setup(
     name='videoscene',
-    version="0.4.0",
+    version="0.5.0",
     description='Parse scene release tags',
     long_description=read_md('README.md'),
     keywords='scene release tags',

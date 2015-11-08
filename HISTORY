@@ -4,6 +4,15 @@ Changelog
 %%version%% (unreleased)
 ------------------------
 
+- Rename rip to quality, parse language tags. [walid]
+
+0.4.0 (2015-11-07)
+------------------
+
+- Fix minor issues. [walid]
+
+  change format_ -> rip
+
 - Add badges. [walid]
 
 0.3.0 (2015-10-07)

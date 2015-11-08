@@ -10,6 +10,8 @@ definitions = defaultdict(lambda: "Unknown", {
     'hdtv': 'Digital recording from high definition source',
     'sdtv': '',
     'dvdr': '',
+    'dl': 'dual language',
+    'ahdtv': 'Analog High Definition TeleVision',
     'proper': '',
     'limited': '',
     'stv': '',
