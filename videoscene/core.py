@@ -7,8 +7,8 @@ from scenedata import definitions
 def parse(filename):
     """ parse a scene release string and return a dictionary of parsed values."""
     screensize = re.compile('(720p|1080p)')
-    rip = re.compile(
-        'CAM|TS|TELESYNC|DVDSCR|BDSCR|DDC|R5LINE|R5|DVDRip|HDRip|BRRip|BDRip|WEBRip|DVDR|HDtv|PDTV|WEBDL|BluRay', re.I)
+    quality = re.compile(
+        'CAM|TS|TELESYNC|DVDSCR|DVDR|BDSCR|DDC|R5LINE|R5|DVDRip|HDRip|BRRip|BDRip|WEBRip|HDtv|PDTV|WEBDL|BluRay', re.I)
     year = re.compile('(1|2)\d{3}')
     series = re.compile('s\d{1,3}e\d{1,3}', re.I)
     group = re.compile('[A-Za-z0-9]+$', re.I)
@@ -18,15 +18,16 @@ def parse(filename):
         'UNRATED|DC|(Directors|EXTENDED)[\.\s](CUT|EDITION)|EXTENDED|3D|2D|\bNF\b',
         re.I)
     tags = re.compile(
-        'COMPLETE|LiMiTED|iNTERNAL|UNCUT|FESTIVAL|DUBBED|SUBBED|WS', re.I)
+        'COMPLETE|LiMiTED|iNTERNAL|UNCUT|FESTIVAL|DOKU|DUBBED|SUBBED|WS', re.I)
     release = re.compile(
         'REAL[\.\s]PROPER|REMASTERED|PROPER|REPACK|READNFO|READ[\.\s]NFO|DiRFiX|NFOFiX', re.I)
     subtitles = re.compile(
-        'MULTi(SUBS)?|NORDiC|DANiSH|SWEDiSH|CHINESE|RUSSIAN|NORWEGiAN|GERMAN|iTALiAN|FRENCH|SPANiSH|SWESUB', re.I)
+        'MULTi(SUBS)?|NORDiC|DANiSH|SWEDiSH|NORWEGiAN|iTALiAN|SPANiSH|SWESUB')
+    language = re.compile('German|Chinese|CZECH|RUSSAIAN|FRENCH|TRUEFRENCH', re.I)
 
     title = filename
     attrs = {'screenSize': screensize,
-             'rip': rip,
+             'quality': quality,
              'year': year,
              'series': series,
              'release_group': group,
@@ -35,7 +36,8 @@ def parse(filename):
              'edition': edition,
              'tags': tags,
              'release': release,
-             'subtitles': subtitles
+             'subtitles': subtitles,
+             'language': language
              }
     data = {}
     for attr in attrs:
