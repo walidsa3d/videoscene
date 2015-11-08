@@ -11,4 +11,4 @@ class CoreTest(unittest.TestCase):
         self.assertEqual(parsed['title'], 'Southpaw')
         self.assertEqual(parsed['year'], '2015')
         self.assertEqual(parsed['screenSize'], '720p')
-        self.assertEqual(parsed['rip'], 'BluRay')
+        self.assertEqual(parsed['quality'], 'BluRay')
