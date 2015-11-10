@@ -7,12 +7,12 @@ from scenedata import definitions
 def parse(filename):
     """ parse a scene release string and return a dictionary of parsed values."""
     screensize = re.compile('720p|1080p', re.I)
-    quality = re.compile(
+    source = re.compile(
         '\.(AHDTV|MBluRay|MDVDR|CAM|TS|TELESYNC|DVDSCR|DVD9|BDSCR|DDC|R5LINE|R5|DVDRip|HDRip|BRRip|BDRip|WEBRip|WEB-?HD|HDtv|PDTV|WEBDL|BluRay)', re.I)
     year = re.compile('(1|2)\d{3}')
     series = re.compile('s\d{1,3}e\d{1,3}', re.I)
     group = re.compile('[A-Za-z0-9]+$', re.I)
-    video = re.compile('Xvid|MP4|NTSC|PAL|[xh][\.\s]?264', re.I)
+    video = re.compile('DVDR|Xvid|MP4|NTSC|PAL|[xh][\.\s]?264', re.I)
     audio = re.compile('AAC2[\.\s]0|AAC|AC3|DTS|DD5', re.I)
     edition = re.compile(
         '\.(UNRATED|DC|(Directors|EXTENDED)[\.\s](CUT|EDITION)|EXTENDED|3D|2D|\bNF\b)',
@@ -27,7 +27,7 @@ def parse(filename):
 
     title = filename
     attrs = {'screenSize': screensize,
-             'quality': quality,
+             'source': source,
              'year': year,
              'series': series,
              'release_group': group,

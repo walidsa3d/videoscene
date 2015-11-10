@@ -15,7 +15,17 @@ $ git clone git@github.com:walidsa3d/videoscene.git
 $ cd videoscene
 $ python setup.py install
 ```
-
+## Usage
+```python
+>>> from videoscene.core import parse
+>>> parse('Game.of.Werewolves.2011.SPANiSH.HDRip.x264-iLU')
+{'title': 'Game of Werewolves', 'source': 'HDRip', 'video': 'x264', 'subtitles': 'SPANiSH', 'year': '2011', 'release_group': 'iLU'}
+>>> parse('Jumanji.1995.FRENCH.720p.HDRip.XviD.AC3-CiNEFOX')
+{'language': 'FRENCH', 'title': 'Jumanji', 'source': 'HDRip', 'video': 'XviD', 'screenSize': '720p', 'year': '1995', 'audio': 'AC3', 'release_group': 'CiNEFOX'}
+>>> parse('Rush.Hour.2.2001.720p.FRENCH.HDRiP.x264.AC3-KLiT')
+{'language': 'FRENCH', 'title': 'Rush Hour 2', 'source': 'HDRiP', 'video': 'x264', 'screenSize': '720p', 'year': '2001', 'audio': 'AC3', 'release_group': 'KLiT'}
+>>> 
+```
 ## License
 ```
 The MIT License (MIT)
