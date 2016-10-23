@@ -22,6 +22,7 @@ definitions = defaultdict(lambda: "Unknown", {
     'repack': '',
     'dubbed': '',
     'dvdrip': 'A copy of the final released DVD',
-    'vhsrip': 'transferred off a retail VHS'
+    'vhsrip': 'transferred off a retail VHS',
+    'internal': 'An INTERNAL release is not allowed to be posted outside the groups affiliated sites, without the prior permission of that site operators.'
 }
 )
